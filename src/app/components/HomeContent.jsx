@@ -17,7 +17,7 @@ export default async function HomeContent() {
 
         {posts.map((post, index) => (
 
-          <article
+          <article key={index}
             className="w-full rounded-xl p-6 text-white shadow-lg bg-zinc-900/20 ring-1 backdrop-blur-[2px] ring-white/15 space-y-6">
             <div className="flex flex-row items-center justify-between">
               {/* <!-- Category Pill --> */}
