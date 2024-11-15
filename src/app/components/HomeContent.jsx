@@ -4,7 +4,7 @@ import SidebarWidget from './SidebarWidget'
 
 export default async function HomeContent() {
 
-  const getPosts = await fetch('http://127.0.0.1:8000/api/posts')
+  const getPosts = await fetch('https://admin.codebyme.pro/api/posts')
   const posts = await getPosts.json()
   console.log(posts);
 
