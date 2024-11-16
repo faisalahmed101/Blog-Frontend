@@ -6,7 +6,6 @@ export default async function HomeContent() {
 
   const getPosts = await fetch('https://admin.codebyme.pro/api/posts')
   const posts = await getPosts.json()
-  console.log(posts);
 
 
   return (
