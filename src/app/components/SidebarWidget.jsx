@@ -17,7 +17,7 @@ export default async function SidebarWidget() {
         <div className="flex flex-row flex-wrap gap-2 text-gray-400">
 
           {categories.map((category, index) => (
-            <a className="inline-flex items-center justify-center gap-2 px-3 py-1 text-lg font-medium transition rounded-full ring-1 ring-inset text-zinc-400 ring-white/10 hover:bg-white/5 hover:text-white"
+            <a className="inline-flex items-center justify-center gap-2 px-3 py-1 text-lg font-medium transition rounded-full ring-1 ring-inset text-zinc-400 ring-white/10 hover:bg-white/5 hover:text-white" key={index}
               href="/#">{category.name}
 
               <span
