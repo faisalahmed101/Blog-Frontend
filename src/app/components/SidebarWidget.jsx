@@ -1,7 +1,7 @@
 import React from 'react'
 
 export default async function SidebarWidget() {
-  const getCategories = await fetch('http://admin.codebyme.pro/api/catagories')
+  const getCategories = await fetch('http://admin.codebyme.pro/api/catagories', {cache: 'no-store'})
   const categories = await getCategories.json()
   
 
@@ -17,7 +17,7 @@ export default async function SidebarWidget() {
         <div className="flex flex-row flex-wrap gap-2 text-gray-400">
 
           {categories.map((category, index) => (
-            <a className="inline-flex items-center justify-center gap-2 px-3 py-1 text-lg font-medium transition rounded-full ring-1 ring-inset text-zinc-400 ring-white/10 hover:bg-white/5 hover:text-white" key={index}
+            <a className="inline-flex items-center justify-center gap-2 px-3 py-1 text-lg font-medium transition rounded-full ring-1 ring-inset text-zinc-400 ring-white/10 hover:bg-white/5 hover:text-white" key={category.id || index}
               href="/#">{category.name}
 
               <span

@@ -1,10 +1,9 @@
 import SidebarWidget from './SidebarWidget'
-
-
+import { formatDistanceToNow } from "date-fns";
 
 export default async function HomeContent() {
 
-  const getPosts = await fetch('https://admin.codebyme.pro/api/posts')
+  const getPosts = await fetch('https://admin.codebyme.pro/api/posts', {cache: "no-store"})
   const posts = await getPosts.json()
 
 
@@ -25,7 +24,8 @@ export default async function HomeContent() {
 
               {/* <!-- Date --> */}
               <p className="text-sm font-semibold sm:text-base text-zinc-400">
-                4 months ago
+                {formatDistanceToNow(new Date(post.created_at), {addSuffix: true})}
+               
               </p>
             </div>
 
